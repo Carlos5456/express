@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de frete</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+
+</head>
+<body>
+
+<!-- CALCULADORA -->
+  <main class="calculadora">
+    <h1 class="titulo text-center text-white" style="margin-bottom: 20px;"><i class="bi bi-box-seam"></i> CALCULADORA DE ESTIMATIVA DE FRETE <i class="bi bi-box-seam"></i></h1>
+    <div class="mb-3">
+        <label for="listaOrigem" class="text-white">Cidade de origem:</label>
+        <select id="listaOrigem" class="listaOrigem form-select mb-3" data-bs-theme="dark">
+        <option value="nada" disabled selected hidden>Origem...</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="listaOrigem" class="text-white">Cidade de destino:</label>
+        <select id="listaDestino" class="listaDestino form-select mb-3" data-bs-theme="dark">
+        <option value="nada" disabled selected hidden>Destino...</option>
+        </select>
+    </div>
+
+
+    <div class="mb-3">
+        <label for="listaOrigem" class="text-white">Quantidade:</label>
+        <select id="listaQuantidade" class="form-select" data-bs-theme="dark">
+            <option id="1">1 Unidade</option>
+            <option id="2">2 Unidades</option>
+            <option id="3">3 Unidades</option>
+            <option id="4">4 Unidades</option>
+            <option id="5">5 Unidades</option>
+            <option id="6">6 Unidades</option>
+            <option id="7">7 Unidades</option>
+            <option id="8">8 Unidades</option>
+            <option id="9">9 Unidades</option>
+            <option id="10">10 Unidades</option>
+            <option disabled>+ de 10 unidades entrar em contato</option>
+        </select>
+    </div>
+
+    <div class="mb-4">
+        <label for="listaOrigem" class="text-white">Tipo:</label>
+        <select id="listaTipo" class="form-select" data-bs-theme="dark">
+            <option id="curta">Curta</option>
+            <option id="curtaGlock">Curta-Glock</option>
+            <option id="longa">Longa</option>
+            <option id="insumos">Insumos</option>
+        </select>
+    </div>
+
+    <div id="botoes" class="d-flex justify-content-between">
+        <button id="calcular" class="btn btn-primary" onclick="pegarvalor(), validar()"><i class="bi bi-calculator"></i> CALCULAR</button>
+        <button id="limpar" type="reset" class="btn btn-secondary" onclick="limpar()"><i class="bi bi-trash3"></i> LIMPAR</button>
+    </div>
+
+    <div id="resultado" role="alert" data-bs-theme="dark" class="alert" style="margin: 35px 0px 0px 0px; padding: 10px; display: none; text-align: center; justify-content: center; align-items: center;"></div>
+</main>
+
+<!-- DIMINUIR CALCULADORA -->
+<div class="mb-5">
+</div>
+<div class="mb-5 diminuir">
+</div>
+
+</body>
+<script src="script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</html>

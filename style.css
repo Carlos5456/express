@@ -1,0 +1,45 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1; /* Ocupa o espaço disponível */
+}
+
+footer {
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.card {
+  height: 300px; /* Altura dos cartões */
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza o conteúdo verticalmente */
+  text-align: center;
+}
+
+#carouselExampleCaptions {
+  max-width: 800px; /* Largura máxima do carrossel */
+  margin: 20px auto; /* Centraliza o carrossel */
+  border: 2px solid #2b3035; /* Borda */
+  border-radius: 10px; /* Bordas arredondadas */
+  overflow: hidden; /* Para evitar que a imagem exceda a borda */
+}
+
+.carousel-item img {
+  width: 100%; /* Imagem ocupa 100% da largura do carrossel */
+  height: 100%; /* Faz a imagem ocupar toda a altura do carrossel */
+  object-fit: cover; /* Cobre todo o espaço mantendo a proporção */
+}
+@media (max-width: 768px) {
+  #carouselExampleCaptions {
+    display: none; /* Oculta o carrossel em dispositivos móveis */
+  }
+}

@@ -1,0 +1,77 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+footer {
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+
+body {
+  background-color: #2b3035; /* Cor de fundo para o tema escuro */
+}
+
+.formulario {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #2b3035; /* Cor de fundo para a formulario */
+  border-radius: 8px;
+  flex: 1; /* Ocupa o espaço disponível */
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .diminuir {
+    display: none;
+  }
+}
+
+.nav-tabs .nav-link {
+  cursor: not-allowed;
+  color: gray;
+}
+
+.nav-tabs .nav-link.active {
+  cursor: pointer;
+  color: white;
+  background-color: #0d6efd;
+}
+
+.progress {
+  height: 20px;
+}
+
+.progress-bar {
+  transition: width 0.5s;
+}
+
+.progress {
+  width: 50%; /* Ajuste para a largura desejada */
+  margin: 0 auto; /* Centraliza a barra se necessário */
+}
+
+
+#nome-empresa-container-dest {
+  display: flex;
+  flex-direction: column; /* Faz com que o label fique em cima do campo */
+}
+
+#nome-empresa-container-dest {
+  display: flex;
+  flex-direction: column; /* Faz com que o label fique em cima do campo */
+}
+
+#nome-empresa-container {
+  display: flex;
+  flex-direction: column; /* Faz com que o label fique em cima do campo */
+}
+
+.form-control {
+  width: 100%; /* Garante que os campos ocupem toda a largura disponível */
+}

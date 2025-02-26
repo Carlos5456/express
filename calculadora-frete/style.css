@@ -1,0 +1,32 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+footer {
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+
+body {
+  background-color: #2b3035; /* Cor de fundo para o tema escuro */
+}
+.calculadora {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #2b3035; /* Cor de fundo para a calculadora */
+  border-radius: 8px;
+  flex: 1; /* Ocupa o espaço disponível */
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .diminuir {
+    display: none;
+  }
+}

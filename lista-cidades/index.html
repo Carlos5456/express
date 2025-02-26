@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de frete</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+
+</head>
+
+<body>
+
+
+  <main class="geral container mt-4" data-bs-theme="dark">
+    <h2 class="text-center mb-4"><i class="bi bi-pin-map"></i> LISTA DE CIDADES ATENDIDAS <i class="bi bi-map"></i></h2>
+    <div class="accordion" id="accordionExample">
+        <!-- ESTADO RIO GRANDE DO SUL (RS) -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingRS">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#estado_rs" aria-expanded="true" aria-controls="estado_rs">
+                    RIO GRANDE DO SUL (RS)
+                </button>
+            </h2>
+            <div id="estado_rs" class="accordion-collapse collapse" aria-labelledby="headingRS" data-bs-parent="#accordionExample">
+                <div class="accordion-body text-center">
+                    <ul class="lista" id="lista_rs"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ESTADO SANTA CATARINA (SC) -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSC">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#estado_sc" aria-expanded="true" aria-controls="estado_sc">
+                    SANTA CATARINA (SC)
+                </button>
+            </h2>
+            <div id="estado_sc" class="accordion-collapse collapse" aria-labelledby="headingSC" data-bs-parent="#accordionExample">
+                <div class="accordion-body text-center">
+                    <ul class="lista" id="lista_sc"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ESTADO PARANÁ (PR) -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingPR">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#estado_pr" aria-expanded="true" aria-controls="estado_pr">
+                    PARANÁ (PR)
+                </button>
+            </h2>
+            <div id="estado_pr" class="accordion-collapse collapse" aria-labelledby="headingPR" data-bs-parent="#accordionExample">
+                <div class="accordion-body text-center">
+                    <ul class="lista" id="lista_pr"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ESTADO SÃO PAULO (SP) -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSP">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#estado_sp" aria-expanded="true" aria-controls="estado_sp">
+                    SÃO PAULO (SP)
+                </button>
+            </h2>
+            <div id="estado_sp" class="accordion-collapse collapse" aria-labelledby="headingSP" data-bs-parent="#accordionExample">
+                <div class="accordion-body text-center">
+                    <ul class="lista" id="lista_sp"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ESTADO MINAS GERAIS (MG) -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingMG">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#estado_mg" aria-expanded="true" aria-controls="estado_mg">
+                    MINAS GERAIS (MG)
+                </button>
+            </h2>
+            <div id="estado_mg" class="accordion-collapse collapse" aria-labelledby="headingMG" data-bs-parent="#accordionExample">
+                <div class="accordion-body text-center">
+                    <ul class="lista" id="lista_mg"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ESTADO GOIAS (GO) -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingGO">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#estado_go" aria-expanded="true" aria-controls="estado_go">
+                    GOIAS (GO)
+                </button>
+            </h2>
+            <div id="estado_go" class="accordion-collapse collapse" aria-labelledby="headingGO" data-bs-parent="#accordionExample">
+                <div class="accordion-body text-center">
+                    <ul class="lista" id="lista_go"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ESTADO DISTRITO FEDERAL (DF) -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingDF">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#estado_df" aria-expanded="true" aria-controls="estado_df">
+                    DISTRITO FEDERAL (DF)
+                </button>
+            </h2>
+            <div id="estado_df" class="accordion-collapse collapse" aria-labelledby="headingDF" data-bs-parent="#accordionExample">
+                <div class="accordion-body text-center">
+                    <ul class="lista" id="lista_df"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ESTADO MATO GROSSO (MT) -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingMT">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#estado_mt" aria-expanded="true" aria-controls="estado_mt">
+                    MATO GROSSO (MT)
+                </button>
+            </h2>
+            <div id="estado_mt" class="accordion-collapse collapse" aria-labelledby="headingMT" data-bs-parent="#accordionExample">
+                <div class="accordion-body text-center">
+                    <ul class="lista" id="lista_mt"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ESTADO MATO GROSSO DO SUL (MS) -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingMS">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#estado_ms" aria-expanded="true" aria-controls="estado_ms">
+                    MATO GROSSO DO SUL (MS)
+                </button>
+            </h2>
+            <div id="estado_ms" class="accordion-collapse collapse" aria-labelledby="headingMS" data-bs-parent="#accordionExample">
+                <div class="accordion-body text-center">
+                    <ul class="lista" id="lista_ms"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ESTADO RONDÔNIA (RO) -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingRO">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#estado_ro" aria-expanded="true" aria-controls="estado_ro">
+                    RONDÔNIA (RO)
+                </button>
+            </h2>
+            <div id="estado_ro" class="accordion-collapse collapse" aria-labelledby="headingRO" data-bs-parent="#accordionExample">
+                <div class="accordion-body text-center">
+                    <ul class="lista" id="lista_ro"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+<!-- DIMINUIR CALCULADORA -->
+<div class="mb-5">
+</div>
+<div class="mb-5 diminuir">
+</div>
+
+
+</body>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</html>

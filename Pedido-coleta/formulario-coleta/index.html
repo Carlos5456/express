@@ -1,0 +1,114 @@
+<h1 class="text-center">DADOS DA COLETA</h1>
+
+<div class="progress">
+    <div class="progress-bar" style="width: 25%">25%</div>
+</div>
+
+
+<!-- CAMPOS DO FORMULÁRIO DE COLETA -->
+<div class="mb-3">
+    <label for="nome-emba" class="text-white">Nome do embarcador:</label>
+    <input data-bs-theme="dark" type="text" class="form-control" name="nome-emba" id="nome-emba"
+        placeholder="João da Silva" required>
+</div>
+<div class="mb-3 row">
+    <div class="col">
+        <label for="doc-1-des" class="text-white">Dados do solicitante:</label>
+        <div class="d-flex">
+            <select data-bs-theme="dark" class="form-select form-select-sm me-2" id="tipo-doc-1"
+                onchange="atualizarMascaraDocumento('doc-1-des', this.value)" style="width: 100px;">
+                <option value="cpf">CPF</option>
+                <option value="cnpj">CNPJ</option>
+            </select>
+            <input data-bs-theme="dark" type="text" class="form-control" name="doc-1-des" id="doc-1-des" required
+                maxlength="18" placeholder="___.___.___-__" oninput="formatarDocumento(this)">
+        </div>
+    </div>
+    <div class="col" id="nome-empresa-container" style="display: none;">
+        <label for="nome-empresa" class="text-white">Razão social:</label>
+        <div class="input-group">
+            <input data-bs-theme="dark" type="text" class="form-control" name="nome-empresa" id="nome-empresa"
+                placeholder="Nome da empresa" readonly>
+            <button class="btn btn-outline-secondary" type="button" id="toggle-nome" onclick="alternarNome()">
+                <i class="bi bi-arrow-repeat"></i> <!-- Ícone de repetição -->
+            </button>
+        </div>
+    </div>
+</div>
+<div class="mb-1 row">
+    <div class="col-md-3">
+        <label for="cep" class="form-label">CEP:</label>
+        <input type="text" class="form-control" id="cep" placeholder="Digite o CEP" required>
+    </div>
+    <div class="col-md-1">
+        <label for="estado" class="form-label">Estado:</label>
+        <select id="estado-coleta" class="selecao form-select mb-3">
+            <option value="RS">RS</option>
+            <option value="SC">SC</option>
+            <option value="PR">PR</option>
+            <option value="SP">SP</option>
+            <option value="MG">MG</option>
+            <option value="GO">GO</option>
+            <option value="DF">DF</option>
+            <option value="MT">MT</option>
+            <option value="MS">MS</option>
+            <option value="RO">RO</option>
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label for="cidade" class="form-label">Cidade:</label>
+        <select id="listaOrigem" class="listaOrigem form-select mb-3" data-bs-theme="dark">
+            <option value="nada" disabled selected hidden>Origem...</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <label for="numero" class="form-label">Número:</label>
+        <input type="text" class="form-control" id="numero" placeholder="Número" maxlength="10" required>
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <div class="col-md-3">
+        <label for="bairro" class="form-label">Bairro:</label>
+        <input type="text" class="form-control" id="bairro" placeholder="Bairro">
+    </div>
+    <div class="col-md-9">
+        <label for="rua" class="form-label">Rua:</label>
+        <input type="text" class="form-control" id="rua" placeholder="Rua">
+    </div>
+</div>
+<div class="mb-3">
+    <label for="info-adicional" class="form-label">Informações adicionais de entrega:</label>
+    <textarea class="form-control" id="info-adicional" rows="2" maxlength="150"
+        placeholder="Digite aqui informações adicionais..."></textarea>
+</div>
+<div class="mb-3 row">
+    <div class="col">
+        <label for="tel-1-des" class="text-white">Telefone 1:</label>
+        <div class="d-flex">
+            <select data-bs-theme="dark" class="form-select form-select-sm me-2" id="tipo-telefone-1"
+                onchange="atualizarMascara('tel-1-des', this.value)" style="width: 100px;">
+                <option value="celular">Celular</option>
+                <option value="fixo">Fixo</option>
+            </select>
+            <input data-bs-theme="dark" type="text" class="form-control" name="tel-1-des" id="tel-1-des" required
+                maxlength="15" placeholder="(11) 9 8888-8888" oninput="formatarTelefone(this)">
+        </div>
+    </div>
+    <div class="col">
+        <label for="tel-2-des" class="text-white">Telefone 2:</label>
+        <div class="d-flex">
+            <select data-bs-theme="dark" class="form-select form-select-sm me-2" id="tipo-telefone-2"
+                onchange="atualizarMascara('tel-2-des', this.value)" style="width: 100px;">
+                <option value="fixo">Fixo</option>
+                <option value="celular">Celular</option>
+            </select>
+            <input data-bs-theme="dark" type="text" class="form-control" name="tel-2-des" id="tel-2-des" maxlength="15"
+                placeholder="(11) 0000-0000" oninput="formatarTelefone(this)">
+        </div>
+    </div>
+</div>
+<!-- ------------------------------ -->
+
+<div class="text-center mt-3">
+    <button class="btn btn-outline-primary" onclick="avancar('tabDestinatario')">Próximo</button>
+</div>

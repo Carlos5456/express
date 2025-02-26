@@ -1,0 +1,27 @@
+<h1 class="text-center">DADOS PACOTE</h1>
+<div class="progress">
+    <div class="progress-bar" style="width: 75%">75%</div>
+</div>
+
+<div class="mb-3 row">
+    <div class="col">
+        <label for="qtd-emba" class="text-white">Quantidade de volumes:</label>
+        <input data-bs-theme="dark" type="number" class="form-control" name="qtd-emba" id="qtd-emba"
+            required max="10" min="1">
+    </div>
+    <div class="col">
+        <label for="estado-coleta" class="text-white">Tipo</label>
+        <select id="listaTipo" class="form-select" data-bs-theme="dark">
+            <option id="curta">Curta</option>
+            <option id="curtaGlock">Curta-Glock</option>
+            <option id="longa">Longa</option>
+            <option id="insumos">Insumos</option>
+        </select>
+    </div>
+</div>
+
+<!-- ------------------------------ -->
+
+<div class="text-center mt-3">
+    <button class="btn btn-outline-primary" onclick="avancar('tabConfirmacao')">Próximo</button>
+</div>

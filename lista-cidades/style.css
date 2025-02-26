@@ -1,0 +1,55 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+footer {
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+
+body {
+  background-color: #2b3035; /* Cor de fundo para o tema escuro */
+}
+
+.geral {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .diminuir {
+    display: none;
+  }
+}
+
+.lista {
+  max-width: 400px; /* Ajuste a largura máxima conforme necessário */
+  margin: 0 auto; /* Centraliza a lista */
+  list-style-type: none; /* Remove os marcadores da lista */
+  padding: 0; /* Remove o padding padrão */
+}
+
+.lista li {
+  padding: 8px; /* Espaçamento interno para os itens da lista */
+  transition: background-color 0.3s; /* Adiciona uma transição suave para a mudança de cor */
+}
+
+.lista li:hover {
+  background-color: #ff8405; /* Cor ao passar o mouse */
+  color: #ffffff;
+  cursor: pointer; /* Muda o cursor para indicar que é interativo */
+}
+
+.accordion-body {
+  background-color: none; /* Cor do fundo do corpo do accordion */
+  max-height: 300px; /* Altura máxima para o corpo do accordion */
+  overflow-y: auto; /* Adiciona barra de rolagem se necessário */
+}
+
+.accordion-item .accordion-button:not(.collapsed) {
+  background-color: #212529; /* Cor quando o accordion está aberto */
+  color: #ffffff; /* Cor do texto quando o accordion está aberto */
+}
