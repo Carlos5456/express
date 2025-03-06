@@ -1,5 +1,4 @@
 let resposta; // Declare resposta fora das funções
-
 function calcular() {
     const destinoValor = document.getElementById('listaDestino');
     const selectValor = document.getElementById('valor');
@@ -14,18 +13,16 @@ function calcular() {
     console.log('Valor inserido:', valor);
 
     const taxas = {
-        'sul': { limite: 7000, taxa: 3.0, abaixoLimite: 250 },
-        'centro': { limite: 7000, taxa: 3.5, abaixoLimite: 250 },
-        'norte': { limite: 7000, taxa: 3.5, abaixoLimite: 250 }
+        'sul': { limite: 6000, taxa: 3.0, abaixoLimite: 200 },
+        'centro': { limite: 6000, taxa: 3.5, abaixoLimite: 250 },
+        'norte': { limite: 6000, taxa: 3.5, abaixoLimite: 250 }
     };
 
     if (taxas[lista]) {
         const { limite, taxa, abaixoLimite } = taxas[lista];
 
         if (valor > limite) {
-            const excedente = valor - limite;
-            const calculo = abaixoLimite + (excedente * taxa / 100);
-            
+            const calculo = (valor * taxa) / 100;
             resposta = calculo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
         } else {
             resposta = abaixoLimite.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
@@ -38,7 +35,6 @@ function calcular() {
         resultado.textContent = resposta; // Exibe mensagem de erro
     }
 }
-
 // Função de validação
 function validar() {
     let destino = document.getElementById('listaDestino');
@@ -62,6 +58,7 @@ function validar() {
     }
 }
 
+// Função para limpar o resultado
 function limpar() {
     const resultado = document.getElementById('resultado');
     resultado.innerHTML = '';
@@ -97,8 +94,10 @@ Promise.all([
     fetch('../artefatos/rodape.html').then(response => response.text())
 ])
 .then(([modalsData, cabecalhoData, rodapeData]) => {
+    // Adiciona os modais
     document.body.insertAdjacentHTML('beforeend', modalsData);
 
+    // Adiciona o cabeçalho se ainda não foi adicionado
     if (!document.querySelector('#cabecalho')) {
         const cabecalhoDiv = document.createElement('div');
         cabecalhoDiv.id = 'cabecalho';
@@ -106,6 +105,7 @@ Promise.all([
         document.body.insertAdjacentElement('afterbegin', cabecalhoDiv);
     }
 
+    // Adiciona o rodapé se ainda não foi adicionado
     if (!document.querySelector('#rodape')) {
         const rodapeDiv = document.createElement('div');
         rodapeDiv.id = 'rodape';

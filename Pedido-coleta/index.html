@@ -29,87 +29,9 @@
             <i class="bi bi-truck-flatbed"></i> SOLICITAÇÃO DE COLETA <i class="bi bi-basket icon"></i>
         </h1>
 
-        <!-- NAV-TABS -->
-        <ul data-bs-theme="dark" class="nav nav-tabs" id="formTabs">
-            <li class="nav-item">
-                <button class="nav-link active" id="tabInicio" data-bs-toggle="tab" data-bs-target="#inicio"
-                    disabled>Início</button>
-            </li>
-            <li class="nav-item">
-                <button class="nav-link" id="tabColeta" data-bs-toggle="tab" data-bs-target="#dadosColeta"
-                    disabled>Dados Coleta</button>
-            </li>
-            <li class="nav-item">
-                <button class="nav-link" id="tabDestinatario" data-bs-toggle="tab" data-bs-target="#dadosDestinatario"
-                    disabled>Dados Destinatário</button>
-            </li>
-            <li class="nav-item">
-                <button class="nav-link" id="tabPacote" data-bs-toggle="tab" data-bs-target="#pacote" 
-                disabled>Dados Pacote</button>
-            </li>
-            <li class="nav-item">
-                <button class="nav-link" id="tabConfirmacao" data-bs-toggle="tab" data-bs-target="#confirmacao"
-                    disabled>Confirmação</button>
-            </li>
-            <li class="nav-item">
-                <button class="nav-link" id="tabSucesso" data-bs-toggle="tab" data-bs-target="#sucesso"
-                    disabled>Sucesso</button>
-            </li>
-        </ul>
+        <p>EM DESENVOLVIMENTO
+        </p>
 
-        <!-- CONTEÚDO DAS PÁGINAS -->
-        <div data-bs-theme="dark" class="tab-content mt-3">
-        
-            <!-- Tela de Início -->
-            <div style="margin: 40px;" class="tab-pane fade show active" id="inicio">
-                <h2 class="text-center">Bem-vindo ao Formulário de Solicitação de coleta</h2>
-                <p class="text-center">Siga os passos para preencher corretamente.</p>
-                <div class="text-center mt-3">
-                    <button style="font-size: 1.8rem;" class="btn btn-outline-success bi bi-send-plus-fill"
-                        onclick="avancar('tabColeta')"> Começar</button>
-                </div>
-            </div>
-        
-            <!-- Tela de Dados Coleta -->
-            <div style="margin: 40px;" class="tab-pane fade" id="dadosColeta">
-                <!-- ----- FORMULARIO -->
-            </div>
-        
-            <!-- Tela de Dados Destinatário -->
-            <div style="margin: 40px;" class="tab-pane fade" id="dadosDestinatario">
-                <!-- ------ FORMULARIO -->
-            </div>
-        
-            <!-- Tela de Dados Pacote -->
-            <div style="margin: 40px;" class="tab-pane fade" id="pacote">
-                <h2 class="text-center">DADOS PACOTE</h2>
-                <div class="progress">
-                    <div class="progress-bar" style="width: 75%">75%</div>
-                </div>
-            </div>
-
-            <!-- Tela de Confirmação -->
-            <div style="margin: 40px;" class="tab-pane fade" id="confirmacao">
-                <h2 class="text-center">CONFIRMAÇÃO</h2>
-                <div class="progress">
-                    <div class="progress-bar bg-warning" style="width: 95%">95%</div>
-                </div>
-                <p class="text-center">Revise seus dados antes de confirmar.</p>
-                <div class="text-center mt-3">
-                    <button class="btn btn-success" onclick="avancar('tabSucesso')">Confirmar</button>
-                </div>
-            </div>
-        
-            <!-- Tela de Sucesso -->
-            <div style="margin: 40px;" class="tab-pane fade" id="sucesso">
-                <h2 class="text-center">SUCESSO!</h2>
-                <div class="progress">
-                    <div class="progress-bar bg-success" style="width: 100%">100%</div>
-                </div>
-                <p class="text-center">Sua solicitação foi enviada com sucesso!</p>
-            </div>
-        
-        </div>
     </main>
 
     <!-- DIMINUIR CALCULADORA -->

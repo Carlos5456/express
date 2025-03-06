@@ -12,54 +12,54 @@ function pegarvalor() {
     // Dicionário de resultados
     const resultados = {
         '1': {
-            'curta': { 'sul': '150', 'centro': '250', 'norte': '250' },
+            'curta': { 'sul': '200', 'centro': '300', 'norte': '250' },
             'curtaGlock': { 'sul': '200', 'centro': '150', 'norte': '250' },
-            'longa': { 'sul': '180', 'centro': '280', 'norte': '280' },
+            'longa': { 'sul': '230', 'centro': '330', 'norte': '330' },
         },
         '2': {
-            'curta': { 'sul': '250', 'centro': '400', 'norte': '400' },
-            'curtaGlock': { 'sul': '300', 'centro': '250', 'norte': '350' },
-            'longa': { 'sul': '280', 'centro': '430', 'norte': '430' },
-        },
-        '3': {
             'curta': { 'sul': '300', 'centro': '450', 'norte': '450' },
-            'curtaGlock': { 'sul': '400', 'centro': '300', 'norte': '450' },
+            'curtaGlock': { 'sul': '300', 'centro': '250', 'norte': '350' },
             'longa': { 'sul': '330', 'centro': '480', 'norte': '480' },
         },
-        '4': {
+        '3': {
             'curta': { 'sul': '350', 'centro': '500', 'norte': '500' },
-            'curtaGlock': { 'sul': '450', 'centro': '350', 'norte': '500' },
+            'curtaGlock': { 'sul': '400', 'centro': '300', 'norte': '450' },
             'longa': { 'sul': '380', 'centro': '530', 'norte': '530' },
         },
-        '5': {
+        '4': {
             'curta': { 'sul': '400', 'centro': '550', 'norte': '550' },
-            'curtaGlock': { 'sul': '500', 'centro': '400', 'norte': '550' },
+            'curtaGlock': { 'sul': '450', 'centro': '350', 'norte': '500' },
             'longa': { 'sul': '430', 'centro': '580', 'norte': '580' },
         },
-        '6': {
+        '5': {
             'curta': { 'sul': '450', 'centro': '600', 'norte': '600' },
-            'curtaGlock': { 'sul': '550', 'centro': '450', 'norte': '600' },
+            'curtaGlock': { 'sul': '500', 'centro': '400', 'norte': '550' },
             'longa': { 'sul': '480', 'centro': '630', 'norte': '630' },
         },
-        '7': {
+        '6': {
             'curta': { 'sul': '500', 'centro': '650', 'norte': '650' },
-            'curtaGlock': { 'sul': '600', 'centro': '500', 'norte': '650' },
+            'curtaGlock': { 'sul': '550', 'centro': '450', 'norte': '600' },
             'longa': { 'sul': '530', 'centro': '680', 'norte': '680' },
         },
-        '8': {
+        '7': {
             'curta': { 'sul': '550', 'centro': '700', 'norte': '700' },
-            'curtaGlock': { 'sul': '650', 'centro': '550', 'norte': '700' },
+            'curtaGlock': { 'sul': '600', 'centro': '500', 'norte': '650' },
             'longa': { 'sul': '580', 'centro': '730', 'norte': '730' },
         },
-        '9': {
+        '8': {
             'curta': { 'sul': '600', 'centro': '750', 'norte': '750' },
-            'curtaGlock': { 'sul': '700', 'centro': '600', 'norte': '750' },
+            'curtaGlock': { 'sul': '650', 'centro': '550', 'norte': '700' },
             'longa': { 'sul': '630', 'centro': '780', 'norte': '780' },
         },
-        '10': {
+        '9': {
             'curta': { 'sul': '650', 'centro': '800', 'norte': '800' },
-            'curtaGlock': { 'sul': '750', 'centro': '650', 'norte': '800' },
+            'curtaGlock': { 'sul': '700', 'centro': '600', 'norte': '750' },
             'longa': { 'sul': '680', 'centro': '830', 'norte': '830' },
+        },
+        '10': {
+            'curta': { 'sul': '700', 'centro': '850', 'norte': '850' },
+            'curtaGlock': { 'sul': '750', 'centro': '650', 'norte': '800' },
+            'longa': { 'sul': '730', 'centro': '880', 'norte': '880' },
         }
     };
 
