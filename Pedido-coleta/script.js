@@ -86,3 +86,4 @@ function handleSubmit() {
     // Se os dados do destinatário forem preenchidos, você pode enviar o formulário ou processar os dados aqui
     return true; // Permite o envio do formulário
 }
+

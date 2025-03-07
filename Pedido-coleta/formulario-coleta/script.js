@@ -4,7 +4,6 @@ fetch('../artefatos/cidades.json')
 .then(response => response.json())
 .then(data => {
     const listaColeta = document.getElementById('listaOrigem');
-    const listaDestinatario = document.getElementById('listaDestino');
 
     // Preenche o select de Cidade de Coleta
     data.groups.forEach(group => {
@@ -20,23 +19,7 @@ fetch('../artefatos/cidades.json')
 
         listaColeta.appendChild(optgroup);
     });
-
-    // Preenche o select de Cidade de Destinatário
-    data.groups.forEach(group => {
-        const optgroup = document.createElement('optgroup');
-        optgroup.label = group.label;
-
-        group.options.forEach(option => {
-            const optionElement = document.createElement('option');
-            optionElement.value = option.value;
-            optionElement.text = option.text;
-            optgroup.appendChild(optionElement);
-        });
-
-        listaDestinatario.appendChild(optgroup);
-    });
 })
-.catch(error => console.error('Erro ao carregar as cidades:', error));
 
 
 function formatarTelefone(input) {
