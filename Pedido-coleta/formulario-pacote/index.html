@@ -4,14 +4,19 @@
 </div>
 
 <div class="mb-3 row">
-    <div class="col">
+    <div class="col" style="margin-top: 1.5rem;">
         <label for="qtd-emba" class="text-white">Quantidade de volumes:</label>
-        <input data-bs-theme="dark" type="number" class="form-control" name="qtd-emba" id="qtd-emba"
-            required max="10" min="1">
+        <div class="input-group mb-2">
+            <button class="btn btn-outline-secondary" type="button" onclick="decrement()">-</button>
+            <input data-bs-theme="dark" type="number" class="form-control text-center" name="qtd-emba" id="qtd-emba" required max="10" min="1" value="1" readonly>
+            <button class="btn btn-outline-secondary" type="button" onclick="increment()">+</button>
+        </div>
     </div>
+</div>
+<div class="mb-3 row">
     <div class="col">
-        <label for="listaTipo" class="text-white">Tipo</label>
-        <select id="listaTipo" class="form-select" data-bs-theme="dark">
+        <label for="listaTipo" class="text-white">Tipo:</label>
+        <select id="listaTipo" class="text-center form-select" data-bs-theme="dark">
             <option id="curta">Curta</option>
             <option id="curtaGlock">Curta-Glock</option>
             <option id="longa">Longa</option>
