@@ -72,18 +72,3 @@ fetch('formulario-pacote/index.html')
         document.getElementById(proximoTab).disabled = false;
         document.getElementById(proximoTab).click();
     }
-
-
-function handleSubmit() {
-    // Verifica se o formulário de coleta foi enviado
-    if (document.getElementById('dadosColeta').style.display !== 'none') {
-        // Esconde os dados de coleta e mostra os dados do destinatário
-        document.getElementById('dadosColeta').style.display = 'none';
-        document.getElementById('dadosDestinatario').style.display = 'block';
-        return false; // Previne o envio do formulário
-    }
-    
-    // Se os dados do destinatário forem preenchidos, você pode enviar o formulário ou processar os dados aqui
-    return true; // Permite o envio do formulário
-}
-
