@@ -72,3 +72,29 @@ fetch('formulario-pacote/index.html')
         document.getElementById(proximoTab).disabled = false;
         document.getElementById(proximoTab).click();
     }
+
+
+function generateCaptcha() {
+        const canvas = document.getElementById('captchaCanvas');
+        const ctx = canvas.getContext('2d');
+        const code = Math.floor(1000 + Math.random() * 9000).toString();
+        sessionStorage.setItem('captcha', code);
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.font = '20px Arial';
+        ctx.fillStyle = 'white';
+        ctx.fillText(code, 30, 25);
+    }
+
+    document.getElementById('startButton').addEventListener('click', function() {
+        const captchaInput = document.getElementById('captchaInput').value;
+        const captchaStored = sessionStorage.getItem('captcha');
+        if (captchaInput === captchaStored) {
+            avancar('tabColeta');
+        } else {
+            alert('Insira o codigo de verificação que está entre bordas vermelhas, no campo abaixo.');
+            generateCaptcha();
+        }
+    });
+
+window.onload = generateCaptcha;
