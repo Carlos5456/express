@@ -92,7 +92,7 @@ function generateCaptcha() {
         if (captchaInput === captchaStored) {
             avancar('tabColeta');
         } else {
-            alert('Insira o codigo de verificação que está entre bordas vermelhas, no campo abaixo.');
+            // alert('Insira o codigo de verificação que está entre bordas vermelhas, no campo abaixo.');
             generateCaptcha();
         }
     });
