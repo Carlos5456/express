@@ -67,7 +67,7 @@
                 <div class="text-center mt-3">
                     <canvas style="border: 1px solid red; border-radius: 5px;" id="captchaCanvas" width="100" height="35" class="mb-1"></canvas>
                     <input type="text" id="captchaInput" placeholder="Digite o código acima." class="form-control mb-3 text-center" style="width: 200px; margin: 0 auto;">
-                    <button onclick="avancar('tabColeta')" id="startButton" style="font-size: 1.8rem;" class="btn btn-outline-success bi bi-send-plus-fill"> Começar</button>
+                    <button onclick="avancarNoValidate('tabColeta')" id="startButton" style="font-size: 1.8rem;" class="btn btn-outline-success bi bi-send-plus-fill"> Começar</button>
                 </div>
             </div>
         
@@ -97,7 +97,7 @@
                 </div>
                 <p class="text-center">Revise seus dados antes de confirmar.</p>
                 <div class="text-center mt-3">
-                    <button class="btn btn-success" onclick="avancar('tabSucesso')">Confirmar</button>
+                    <button class="btn btn-success" onclick="avancarNoValidate('tabSucesso')">Confirmar</button>
                 </div>
             </div>
         

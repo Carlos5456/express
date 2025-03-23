@@ -4,10 +4,11 @@
 </div>
 
 <!-- CAMPOS DO FORMULÁRIO DE DESTINO -->
+<form class="needs-validation" novalidate>
 <div class="mb-3">
     <label for="nome-dest" class="text-white">Nome do destinatário:</label>
     <input data-bs-theme="dark" type="text" class="form-control" name="nome-dest" id="nome-dest"
-        placeholder="João da Silva">
+        placeholder="João da Silva" required>
 </div>
 <div class="mb-3 row">
     <div class="col">
@@ -19,7 +20,7 @@
                 <option value="cnpj">CNPJ</option>
             </select>
             <input data-bs-theme="dark" type="text" class="form-control" name="doc-1-dest" id="doc-1-dest"
-                maxlength="18" placeholder="___.___.___-__" oninput="formatarDocumentoDest(this)">
+                maxlength="18" placeholder="___.___.___-__" oninput="formatarDocumentoDest(this)" required>
         </div>
     </div>
     <div class="col" id="nome-empresa-container-dest" style="display: none;">
@@ -28,7 +29,7 @@
             <input data-bs-theme="dark" type="text" class="form-control" name="nome-empresa-dest" id="nome-empresa-dest"
                 placeholder="Nome da empresa" readonly>
             <button class="btn btn-outline-secondary" type="button" id="toggle-nome-dest" onclick="alternarNomeDest()">
-                <i class="bi bi-arrow-repeat"></i> <!-- Ícone de repetição -->
+                <i class="bi bi-arrow-repeat"></i>
             </button>
         </div>
     </div>
@@ -36,7 +37,7 @@
 <div class="mb-1 row">
     <div class="col-md-3">
         <label for="cep-dest" class="form-label">CEP:</label>
-        <input type="text" class="form-control" id="cep-dest" placeholder="Digite o CEP">
+        <input type="text" class="form-control" id="cep-dest" placeholder="Digite o CEP" required>
     </div>
     <div class="col-md-1">
         <label for="estado-Dest" class="form-label">Estado:</label>
@@ -56,22 +57,22 @@
     <div class="col-md-6">
         <label for="listaDestino" class="form-label">Cidade:</label>
         <select id="listaDestino" class="listaDestino form-select mb-3" data-bs-theme="dark">
-            <option value="nada" disabled selected hidden>Destino...</option>
+            <option value="nada" disabled selected hidden>Selecione uma cidade de destino.</option>
         </select>
     </div>
     <div class="col-md-2">
         <label for="numero-dest" class="form-label">Número:</label>
-        <input type="text" class="form-control" id="numero-dest" placeholder="Número" maxlength="10">
+        <input type="text" class="form-control" id="numero-dest" placeholder="Número" maxlength="10" required>
     </div>
 </div>
 <div class="mb-3 row">
     <div class="col-md-3">
         <label for="bairro-dest" class="form-label">Bairro:</label>
-        <input type="text" class="form-control" id="bairro-dest" placeholder="Bairro">
+        <input type="text" class="form-control" id="bairro-dest" placeholder="Bairro" required>
     </div>
     <div class="col-md-9">
         <label for="rua-dest" class="form-label">Rua:</label>
-        <input type="text" class="form-control" id="rua-dest" placeholder="Rua">
+        <input type="text" class="form-control" id="rua-dest" placeholder="Rua" required>
     </div>
 </div>
 <div class="mb-3">
@@ -89,7 +90,7 @@
                 <option value="fixo">Fixo</option>
             </select>
             <input data-bs-theme="dark" type="text" class="form-control" name="tel-1-dest" id="tel-1-dest"
-                maxlength="15" placeholder="(11) 9 8888-8888" oninput="formatarTelefoneDest(this)">
+                maxlength="15" placeholder="(11) 9 8888-8888" oninput="formatarTelefoneDest(this)" required>
         </div>
     </div>
     <div class="col">
@@ -105,9 +106,10 @@
         </div>
     </div>
 </div>
+</form>
 <!-- ------------------------------ -->
 
 <div class="text-center mt-3">
-    <button class="btn btn-outline-primary" onclick="avancarDest('tabPacote')">Próximo</button>
+    <button class="btn btn-outline-primary" onclick="avancar('tabPacote')">Próximo</button>
 </div>
 </div>

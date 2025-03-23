@@ -67,13 +67,6 @@ fetch('formulario-pacote/index.html')
 
 
 
-// AVANÇAR PROXIMA TAB
-    function avancar(proximoTab) {
-        document.getElementById(proximoTab).disabled = false;
-        document.getElementById(proximoTab).click();
-    }
-
-
 function generateCaptcha() {
         const canvas = document.getElementById('captchaCanvas');
         const ctx = canvas.getContext('2d');
@@ -98,3 +91,40 @@ function generateCaptcha() {
     });
 
 window.onload = generateCaptcha;
+
+
+// AVANÇAR PROXIMA TAB sem validar
+function avancarNoValidate(proximoTab) {
+    document.getElementById(proximoTab).disabled = false;
+    document.getElementById(proximoTab).click();
+    }
+
+// AVANÇAR PROXIMA TAB
+function avancar(proximoTab) {
+    const formularioAtual = document.querySelector('.needs-validation');
+
+    // Adiciona validação antes de avançar
+    if (formularioAtual && formularioAtual.checkValidity()) {
+        document.getElementById(proximoTab).disabled = false;
+        document.getElementById(proximoTab).click();
+    } else {
+        // Adiciona a classe de validação do Bootstrap
+        formularioAtual.classList.add('was-validated');
+    }
+}
+
+// Validação do Bootstrap
+(() => {
+    'use strict';
+    const forms = document.querySelectorAll('.needs-validation');
+
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        }, false);
+    });
+})();

@@ -87,10 +87,12 @@ function formatarDocumento(input) {
     let value = input.value.replace(/\D/g, ''); // Remove tudo que não é dígito
 
     if (tipo === 'cpf') {
+        if (value.length > 11) value = value.substring(0, 11); // Limita a 11 dígitos
         value = value.replace(/(\d{3})(\d)/, '$1.$2');
         value = value.replace(/(\d{3})(\d)/, '$1.$2');
         value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
     } else if (tipo === 'cnpj') {
+        if (value.length > 14) value = value.substring(0, 14); // Limita a 14 dígitos
         value = value.replace(/^(\d{2})(\d)/, '$1.$2');
         value = value.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3');
         value = value.replace(/\.(\d{3})(\d)/, '.$1/$2');
@@ -101,7 +103,7 @@ function formatarDocumento(input) {
 
     // Chama a função buscarNomeEmpresa se CNPJ for válido
     if (tipo === 'cnpj' && value.length === 18) {
-        buscarNomeEmpresa(value.replace(/\D/g, '')); // Chama a função com o CNPJ formatado
+        buscarNomeEmpresa(value); // Chama a função com o CNPJ formatado
     }
 }
 

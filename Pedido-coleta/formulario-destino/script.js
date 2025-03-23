@@ -61,10 +61,6 @@ function atualizarMascaraDest(id, tipo) {
     input.placeholder = tipo === 'celular' ? "(11) 9 8888-8888" : "(11) 0000-0000";
 }
 
-function avancarDest(proximoTab) {
-    document.getElementById(proximoTab).disabled = false;
-    document.getElementById(proximoTab).click();
-}
 
 function atualizarMascaraDocumentoDest(inputId, tipo) {
     const input = document.getElementById(inputId);
@@ -88,10 +84,12 @@ function formatarDocumentoDest(input) {
     let value = input.value.replace(/\D/g, ''); // Remove tudo que não é dígito
 
     if (tipo === 'cpf') {
+        if (value.length > 11) value = value.substring(0, 11); // Limita a 11 dígitos
         value = value.replace(/(\d{3})(\d)/, '$1.$2');
         value = value.replace(/(\d{3})(\d)/, '$1.$2');
         value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
     } else if (tipo === 'cnpj') {
+        if (value.length > 14) value = value.substring(0, 14); // Limita a 14 dígitos
         value = value.replace(/^(\d{2})(\d)/, '$1.$2');
         value = value.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3');
         value = value.replace(/\.(\d{3})(\d)/, '.$1/$2');
@@ -102,9 +100,27 @@ function formatarDocumentoDest(input) {
 
     // Chama a função buscarNomeEmpresaDest se CNPJ for válido
     if (tipo === 'cnpj' && value.length === 18) {
-        buscarNomeEmpresaDest(value.replace(/\D/g, '')); // Chama a função com o CNPJ formatado
+        buscarNomeEmpresaDest(value); // Chama a função com o CNPJ formatado
     }
 }
+
+// Exemplo de como adicionar eventos
+document.addEventListener('DOMContentLoaded', function() {
+    const tipoSelect = document.getElementById('tipo-doc-1-dest');
+    const input = document.getElementById('input-doc-dest');
+
+    // Atualiza a máscara ao carregar
+    atualizarMascaraDocumentoDest('input-doc-dest', tipoSelect.value);
+
+    tipoSelect.addEventListener('change', function() {
+        atualizarMascaraDocumentoDest('input-doc-dest', tipoSelect.value);
+    });
+
+    input.addEventListener('input', function() {
+        formatarDocumentoDest(input);
+    });
+});
+
 
 function buscarNomeEmpresaDest(cnpj) {
     // Exemplo de chamada de API (substitua pela API real)
