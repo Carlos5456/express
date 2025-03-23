@@ -6,10 +6,11 @@
 
 
 <!-- CAMPOS DO FORMULÁRIO DE COLETA -->
+<form>
 <div class="mb-3">
     <label for="nome-emba" class="text-white">Nome do embarcador:</label>
     <input data-bs-theme="dark" type="text" class="form-control" name="nome-emba" id="nome-emba"
-        placeholder="João da Silva" required>
+        placeholder="João da Silva">
 </div>
 <div class="mb-3 row">
     <div class="col">
@@ -20,8 +21,8 @@
                 <option value="cpf">CPF</option>
                 <option value="cnpj">CNPJ</option>
             </select>
-            <input data-bs-theme="dark" type="text" class="form-control" name="doc-1-des" id="doc-1-des" required
-                maxlength="18" placeholder="___.___.___-__" oninput="formatarDocumento(this)">
+            <input data-bs-theme="dark" type="text" class="form-control" name="doc-1-des" id="doc-1-des"
+             maxlength="18" placeholder="___.___.___-__" oninput="formatarDocumento(this)">
         </div>
     </div>
     <div class="col" id="nome-empresa-container" style="display: none;">
@@ -38,7 +39,7 @@
 <div class="mb-1 row">
     <div class="col-md-3">
         <label for="cep" class="form-label">CEP:</label>
-        <input type="text" class="form-control" id="cep" placeholder="Digite o CEP" required>
+        <input type="text" class="form-control" id="cep" placeholder="Digite o CEP">
     </div>
     <div class="col-md-1">
         <label for="estado-coleta" class="form-label">Estado:</label>
@@ -63,7 +64,7 @@
     </div>
     <div class="col-md-2">
         <label for="numero" class="form-label">Número:</label>
-        <input type="text" class="form-control" id="numero" placeholder="Número" maxlength="10" required>
+        <input type="text" class="form-control" id="numero" placeholder="Número" maxlength="10">
     </div>
     </div>
     <div class="mb-3 row">
@@ -90,7 +91,7 @@
                 <option value="celular">Celular</option>
                 <option value="fixo">Fixo</option>
             </select>
-            <input data-bs-theme="dark" type="text" class="form-control" name="tel-1-des" id="tel-1-des" required
+            <input data-bs-theme="dark" type="text" class="form-control" name="tel-1-des" id="tel-1-des"
                 maxlength="15" placeholder="(11) 9 8888-8888" oninput="formatarTelefone(this)">
         </div>
     </div>
@@ -107,6 +108,7 @@
         </div>
     </div>
 </div>
+</form>
 <!-- ------------------------------ -->
 
 <div class="text-center mt-3">

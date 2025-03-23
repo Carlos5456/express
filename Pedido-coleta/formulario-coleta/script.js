@@ -3,7 +3,7 @@
 fetch('../artefatos/cidades.json')
 .then(response => response.json())
 .then(data => {
-    const listaColeta = document.getElementById('listaOrigem');
+    const listaOrigem = document.getElementById('listaOrigem');
 
     // Preenche o select de Cidade de Coleta
     data.groups.forEach(group => {
@@ -17,7 +17,7 @@ fetch('../artefatos/cidades.json')
             optgroup.appendChild(optionElement);
         });
 
-        listaColeta.appendChild(optgroup);
+        listaOrigem.appendChild(optgroup);
     });
 })
 
